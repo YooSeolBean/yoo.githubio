@@ -1,0 +1,1007 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <link rel="shorrcut icon" type="image/x-icon" href="vuviti.png" >
+    <title>VUVITI</title>
+    <script src="https://kit.fontawesome.com/e1dd674a26.js" crossorigin="anonymous" defer></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script>
+    const all = ele => document.querySelectorAll(ele)
+    const one = ele => document.querySelector(ele)
+    const slide=_=>{
+        const wrap =one('.img_slide') //.img_slide 선택 
+        const target =wrap.children[0] //.img_slide ul 선택
+        const len = target.children.length // .img_slide li 개수
+
+        //.img_slide ul의 너비 조정
+        target.style.cssText=`width:calc(100% * ${len});display:flex;transition:1s;`
+        // .img_slide li의 너비 조정
+        Array.from(target.children)
+        .forEach(ele=>ele.style.cssText = `width:calc(100%/${len});`)
+        //화면전환 실행
+        let pos=0
+        setInterval(()=>{
+            pos=(pos+1) % len //장면선택
+            target.style.marginLeft=`${-pos * 100}%` //장면전환
+        },2000) // 1.5초마다 실행
+        }
+        window.onload=function(){
+            slide()
+        }
+
+        ///video 정지
+
+        let vid= document.getElementById('video');
+        function pauseVid(){
+            vid.pause();
+        }
+      
+        //fade in 
+        $(document).ready(function(){
+        $('h2.tit').fadeIn(2000);});
+    
+         
+
+        
+ 
+</script>
+</head> 
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Cairo:wght@200;300;400;600;700;900&display=swap');
+    body{
+        margin: 0;
+        background-color:black;
+        font-family: 'Cairo', sans-serif;
+    }
+
+    a{
+        text-decoration: none;
+        color: inherit;
+    }
+
+    ul li{
+        list-style: none;
+    }
+    .header{
+        
+        background-image:url("bmw3.jpg") ;
+        background-size: 100% 100%;
+        height:760px;
+    }
+
+   /* .header_inner_top{
+        border: 5px solid darkblue;
+      
+        
+    }*/
+
+
+    .header_inner1{
+        display: flex;
+        justify-content: space-between;      
+        padding: 30px 70px;
+        align-items: center;
+        opacity: 0.75; 
+        height:70px;
+        top:0;
+    }
+
+    .header_inner1  .fa-vuejs{
+        font-size: 4.3rem;
+        
+    }
+
+
+    .list{
+        display: flex;
+        font-size: 1.2rem ;
+        font-weight:600;     
+        position: absolute;
+        left: 200px;
+    }
+
+    .list li:hover{
+        color: teal;
+
+    }
+
+    
+    
+    .serach_list li:hover{
+        color:teal;
+    }
+
+    .list li{
+        padding: 8px 12px;
+      
+    }
+
+   .logo{
+       font-weight: 600;
+       font-size: 2rem;
+   }
+
+   .header_inner2{
+       /*border: 5px solid forestgreen;*/
+       height:500px;
+       display: flex;
+       flex-direction: row;
+       
+   }
+
+  
+   .bmw1{
+       /*border: 5px solid firebrick;*/
+       right:0px;
+   }
+
+   .text_content{
+       
+       align-self: center;
+       position:absolute;
+       left:70px;
+       padding:60px 0;            
+   }
+
+   .h3_Sheer{
+       font-size: 1.3rem;
+   }
+
+   .h1_Cars{
+       font-size: 2.5rem;
+       padding-bottom: 8px;
+   }
+
+   .h{
+       font-size:1.2rem;
+       font-weight:600;
+       border: 1px solid black;
+       padding: 7px 10px;
+   }
+
+   .h:hover{
+       background-color: black;
+       color:#eeeeee;
+   }
+
+   .serach_list{
+       display: flex;
+       font-size: 1.1rem;
+   }
+
+   .serach_list li{
+       padding: 8px 12px;
+   }
+
+   .header_inner3{
+       display: flex;
+       justify-content: space-between;
+       align-items: center;
+       
+       margin-top:10px;
+       padding: 8px 70px;
+       padding-bottom:0px;
+       font-size:1.7rem;
+       color: white;;
+       opacity: 0.5;
+   }
+
+   .sns{
+       display: flex;
+      
+   }
+
+   .sns li{
+       padding: 0 20px;
+   }
+
+   .fa-chevron-down:hover{
+       color:black;
+   }
+
+   .sns li:hover{
+       color:black;
+   }
+
+   .main_1{
+      /* border:5px solid firebrick;*/
+       background: linear-gradient(to bottom,#434343 ,#000000);
+    border-bottom:1px solid #434343;
+       
+     
+   }
+
+   .main_inner{
+       /*border: 5px solid forestgreen;*/
+       color:#eeeeee;
+       display: flex;
+       justify-content: space-evenly;
+       padding: 70px 0; 
+       opacity: 0.9;
+    
+   }
+
+  .main_content1, .main_content2, .main_content3, .main_content4, .main_content5{
+     
+      text-align: left;
+      /*border:1px solid forestgreen;*/
+      padding: 20px 10px;
+      
+  }
+
+  .in_title{
+      /*border: 5px solid firebrick;*/
+      font-size: 1.5rem;
+      margin-top: -20px;
+
+  }  
+
+  .in_contents{
+     margin-top:-20px; 
+      
+  }
+
+  
+  /*sldie*/
+
+  .main_inner_important{
+     /* border: 5px solid firebrick;*/
+      position: relative;
+      overflow: hidden;
+     background-color: #000000;
+      color:#eeeeee;
+     
+  }
+
+  ul,li{
+      list-style: none;
+  }
+
+
+  .important_pic1{
+     /*border: 2px solid forestgreen;*/
+     margin:0;
+        
+      
+  }
+
+  .img_slide{
+      /*border: 5px solid fuchsia;*/
+      margin:0 0;
+      padding:0 0;
+      overflow:hidden;
+      width:100%;
+      height:100%;
+      
+
+  }
+
+  .img_slide ul{
+      height:100%;
+      width:100%;
+      margin:0 0;
+      padding: 0 0;
+      /*border: 5px solid silver;*/
+    
+  }
+
+  .img_slide li{
+    height:100%;
+    
+    /*border: 5px solid gold;*/
+    margin: 0 0;
+    left:-200px;
+    
+  }
+
+  .img_slide li:nth-child(1){
+      background:url('slide5_5.jpg');
+      background-size: 100% 100%;
+      margin:0 0;
+      
+  }
+
+  .img_slide li:nth-child(2){
+      background:url('slide2.2.jpg');
+      background-size: 100% 100%;
+      margin:0 0;
+  }
+
+  .img_slide li:nth-child(3){
+      background:url('slide3.jpg');
+     background-size: 100% 100%;
+  }
+
+  .img_slide li:nth-child(4){
+      background:url('slide4_4.jpg');
+      background-size: 100% 100%;
+  }
+
+  .img_slide li:nth-child(5){
+      background:url('slide1.jpg');
+      background-size: 100% 100%;
+  }
+
+
+    .img,.content_titCon{
+        
+        float:left;
+        opacity: 0.9;
+    }
+
+    .img{
+        width:50%;
+        height:438px;
+        
+    }
+
+    .content_titCon{
+        padding:91px 142px;
+        /*border: 5px solid firebrick;*/
+    }
+
+    .pic_title{
+        font-size: 1.4rem;;
+    }
+    
+    .main_inner_important2{
+        /*border: 5px solid chartreuse;*/
+        display: flex;
+        
+    }
+
+    .content_titCon_1{
+        /*border: 5px solid blueviolet;*/
+        padding:100px 208px;
+    }
+ 
+    .img_2,.img_3{
+        /*border: 5px solid blue;*/
+        margin-left:0;
+        height:inherit;
+        
+    }
+
+ 
+    .main_inner_important3{
+        /*border: 5px solid floralwhite;*/
+        display: flex;
+    }
+
+    .pic_contents{
+     opacity: 0.8;
+     padding-bottom: 20px;;
+    }
+
+    .img_3{
+        /*border: 5px solid blue;*/
+        width:119vh
+    }
+
+    .readMore{
+        border-bottom: 2px solid #eeeeee;;
+    }
+
+    .readMore:hover{
+        opacity: 0.8;
+    }
+
+    /*video*/
+
+    .videowrap{
+        /*background-color: black;*/
+        position: relative;
+    }
+
+  
+    #video{
+        position: relative;
+        top:0px;
+        left:0px;
+        min-width:100%;
+        min-height: 100%;
+        width:auto;
+        height:auto;
+        z-index:1;
+        overflow: hidden;
+        
+    }
+
+    /*last main*/
+
+    .lastmain{
+       /* border: 5px solid firebrick;*/
+        background-color: black;
+        color:#eeeeee;
+        
+    }
+
+    .lastmain_inner{
+       
+     
+      background-color: black;
+      /*border: 1px solid floralwhite;*/
+      padding-top:70px;
+     
+    }
+
+    .lastmaintit{
+        padding-bottom: 0;
+       
+       
+        font-size: 1.3rem;
+        line-height: 0;
+    }
+
+    
+
+   .lastmaintit, .lastmaintitcon{
+        padding: 0 60px;
+        /*border: 5px solid firebrick;*/
+        
+        
+    }
+
+    .lastmaintitcon{
+        opacity: 0.8;
+    }
+
+    .lastmain3{
+        display: flex;
+        /*justify-content: space-between;*/
+        align-items: center;
+        padding:0 60px;
+    }
+    
+    .lastmain3{
+        display: flex;
+        /*border: 5px solid firebrick;*/
+        padding:70px 60px;
+        justify-content: space-between;
+    }
+
+    .lastmainsearch1,.lastmainsearch2, .search{
+        font-weight: 500;
+       /* border-bottom: 2px solid #eeeeee;*/
+        margin-right:0;
+        /*padding-top: 50px;*/
+        /*padding-right:100px;*/
+    }
+
+    .cartype,.priceRange{
+        border-bottom: 2px solid #eeeeee;
+        font-weight: 600;
+        padding-right:200px;
+    }
+
+    .seeOtherVehicles{
+        border: 2px solid #eeeeee;
+        border-radius: 2px;
+        padding: 7px 40px;
+    }
+
+    .seeOtherVehicles:hover{
+        background-color: #eeeeee;
+        color:black;
+        opacity: 0.9;
+       
+    }
+
+    .rllylast{
+        opacity: 0.8;
+        font-size: 0.9rem;
+    }
+
+
+
+   /* .lastmaintitcon{
+        padding
+    }*/
+
+   /*footer*/
+
+   .footer{
+       /*border:5px solid gold;*/
+       color:#eeeeee;     
+   }
+
+   .footer_inner{
+    
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    opacity: 0.5;
+
+   }
+
+   .fa-vuejs{
+       font-size: 1.3rem;
+   }
+
+   .footer_icon{
+    padding: 10px 60px;
+     display: flex;
+       
+   }
+
+   .footer_Text{
+       padding: 0 20px;
+       font-size: 0.8rem;
+   }
+
+   .sns_2{
+       padding:10px 60px;
+       font-size: 1.1rem;
+   }
+
+   .sns_2 li{
+       padding: 0 10px
+   }
+
+   .sns_2{
+       display: flex;
+       
+   }
+
+
+
+
+   
+
+ 
+   /*미디어 쿼리*/  
+
+   @media screen and (max-width:57.500em){
+    .header_inner1{
+        padding: 8px 30px;
+    }
+
+    .list{
+        left:100px;
+    }
+
+
+   }
+
+   @media screen and (max-width:43.750em){
+    .serach_list{
+        display: none;
+    }
+    .main_inner{
+       
+       flex-direction: column;
+        text-align: center;
+        padding-left:170px;
+    }
+
+    .main_1{
+           /*border: 5px solid aqua;*/
+       }
+
+       .main_inner{
+           /*border: 5px solid violet;*/
+           display: flex;
+           flex-direction: column;
+           align-content: center;
+       }
+
+    .main_content1,.main_content2,.main_content3,.main_content4,.main_content5{
+           /*border: 5px solid firebrick;*/
+           padding: 20px 0;
+           margin: 0;
+           
+           margin-left:-170px;
+           text-align: center;
+           padding-left:10px;
+           
+       };
+
+
+    .in_title{
+        border: 5px solid forestgreen;
+        padding: 8px 60px;
+        text-align: center;
+    }
+
+    .in_contents{
+        display: none;;
+    }
+
+    .main_inner_important{
+        /*border: 5px solid firebrick;*/
+    }
+
+    .img_slide{
+        width: 100%;;
+    }
+
+    .content_titCon{
+        width:100%;
+       /* border: 5px solid slateblue;*/
+        padding:0px 20px;
+        /*text-align: center;*/
+        
+    }
+
+    .pic_title{
+        font-size:1.2rem;
+    }
+
+    .main_inner_important2{
+        /*border: 5px solid darkblue;*/
+        display: flex;;
+        flex-direction: column;
+    }
+
+    .img_2{
+        order:0;
+        width:100%;
+        height:400px;
+    }
+
+    .content_titCon_1{
+        order: 1;
+        text-align: left;
+        
+    }
+
+    .readMore{
+        border-bottom: 1px solid #eeeeee;
+    }
+
+    .main_inner_important3{
+        display: flex;
+        flex-direction: column;
+    }
+
+    .img_3{
+        height:400px;
+    }
+
+    .videowrap{
+        /*border: 5px solid  aqua;*/
+        position:absolute;
+        display: none;;
+        
+    }
+
+    .lastmain_inner{
+        /*border: 5px solid firebrick;*/
+        text-align: center;
+        padding: 305px 100px; ;
+
+        
+    }
+
+    h2 .tit{
+        display: none;
+    }
+
+    .lastmain3{
+        flex-direction: column;
+    }
+
+    .lastmainsearch1,.lastmainsearch2,.search,.rllylast{
+        /*border: 5px solid firebrick;*/
+        padding: 50px 100px;
+        
+    }
+   /* .cartype,.priceRange{
+        border-bottom: 1px solid #eeeeee; 
+
+    }*/    
+
+    .rllylast{
+        text-align: left;;
+    }
+
+   }
+
+   @media screen and (max-width:37.500em){
+  
+ 
+    .header_inner1{
+       
+        flex-direction: column;
+        opacity: 1;      
+    }
+
+    .fa-vuejs{
+        padding-top:30px;
+       
+        
+    }
+
+    .list{
+        
+        flex-direction: column;;
+        width:100%;
+        left:-40px;
+        text-align: center;
+        top:130px;
+        font-size: 1.5rem;
+        font-weight: bolder;
+    }
+
+    .list li{
+        background-color: honeydew;
+        opacity: 0.5;
+        
+        
+    }
+
+    .list li:hover{
+        color:teal;
+    }
+
+    .header_inner2{
+        display: none;;
+    }
+
+    .header_inner3{
+        margin-top: 550px;
+        text-align: center;
+    } 
+
+
+
+    .lastmaintit{
+        /*border: 5px solid firebrick;*/
+        width:100%;
+        padding:0px 20px;
+        margin-left:-20px;
+    }
+
+    .lastmainsearch1, .lastmainsearch2{
+       /* border: 5px solid firebrick;*/
+        width:100%;
+       
+    }
+
+    .search{
+        width:100%;
+    }
+
+    .seeOtherVehicles{
+        text-align: center;
+    }
+
+    .rllylast{
+        width:100%;
+        text-align: center;
+    }
+    
+    .footer_icon{
+       /* border: 5px solid firebrick;
+        */
+        align-items: center;  
+    }
+
+    .fa-vuejs{
+        font-size: 1.7rem;
+       
+        padding-top:0;
+    }
+
+    .footer_inner{
+        flex-direction: column;;
+        align-content: center;
+    }
+   }
+
+  
+
+
+</style>
+<body>
+    <div class="wrap">
+        <header class="header">
+            <div class="header_inner_top">
+               <!---<div class="picture">
+                    <img class="bmw1" width="100%" height="100%" src="bmw1.jpg" alt>
+                </div>   -->
+            <div class="header_inner1">
+                <div class="logo"><a href="car.html" target="_blank" title="VUVITI Main Page">
+                    <i class="fab fa-vuejs"> </i>
+                 <!--VUVITI---> 
+                </a>
+                </div>
+                <ul class="list">
+                    <li><a href="#">M2 COUPE</a></li>
+                    <li><a href="#">M2</a></li>
+                    <li><a href="#">M3</a></li>
+                    <li><a href="#">M4</a></li>
+                    <li><a href="#">M5</a></li>
+                    <li><a href="#">X5 M</a></li>
+                    <li><a href="#">X6 M</a></li>
+                </ul>
+                <ul class="serach_list">
+                    <li><a href="#"><i class="fas fa-search"></i></a></li>
+                    <li><a href="#"><i class="fas fa-bars"></i></a></li>
+                </ul>
+            </div>
+            <div class="header_inner2"> 
+               <div class="text_content">
+                <h3 class="h3_Sheer">Sheer Driving Pleasure</h3>
+                <h1 class="h1_Cars">Ultra Wideband in Cars-<br>What You Need to Know</h1>
+                <span class="h ib ad"><a href="#">Read more</a> </span>
+            </div>
+            </div></div>
+            <div class="header_inner3">
+               <a href="#"><i class="fas fa-chevron-down"></i></a> 
+                <ul class="sns">
+                    <li><a href="#"><i class="fab fa-twitter"></i></a></li>
+                    <li><a href="#"><i class="fab fa-instagram"></i></a></li>
+                    <li><a href="#"><i class="fab fa-facebook-square"></i></a></li>
+                </ul>
+            </div>
+        </header>
+        <main class="main_1">
+          <div class="main_inner">
+            <div class="main_content1">
+                <div class="in_title title0">
+                    <h3>M Sport Difference</h3>
+                </div>
+                <div class="in_contents contents0">
+                    Active M Difference <br> improves driving stability
+                </div>
+            </div>
+           <div class="main_content2">
+               <div class="in_title title1">
+                   <h3>M Sports Break</h3>
+               </div>
+               <div class="in_contents contents1">
+                Front brake caliper <br> brake callifer with single piston
+               </div>
+           </div>
+           <div class="main_content3">
+               <div class="in_title title2">
+                  <h3>M suspension</h3>
+                </div>
+                  <div class="in_contents contents2">
+                    The 10mm lower adaptive <br> M and active 
+                  </div> 
+               
+           </div>
+           <div class="main_content4">
+               <div class="in_title title3">
+                <h3>Steptronic sport</h3>
+               </div>
+            <div class="in_contents contents3">
+                The eight-speed steptronic sport <br> transmission changes gears sporty 
+            </div>
+           </div>
+         <!--  <div class="main_content5">
+            <div class="in_title title3">
+               <h3> 4-Cylinder Gasoline Engine</h3>
+            </div>
+            <div class="in_contents contents4">
+                BMW Twin Power Turbo 2.0-litre four <br>-cylinder petrol engine 
+            </div>-->
+           </div>
+          </div> 
+          <!--float효과-->
+          <!--슬라이드 한번 만들어보자-->
+          <div class="main_inner_important">
+              <div class="important_pic1">
+                  <div class="img img_slide">
+                      <ul>
+                          <li></li>
+                          <li></li>
+                          <li></li>
+                          <li></li>
+                          <li></li>
+                      </ul>
+                  </div>
+                  <div class="content_titCon">
+                  <div class="pic_title pic1_title">
+                    <h2>
+                        Bmw Laser Light</h2>
+                  </div>
+                  <div class="pic_contents">
+                    In laser light high beam mode, you can get a field of view up to 600m. 
+                    <br>Visibility is ensured in the dark for safe driving, 
+                    <br>while BMW laser light lettering on the headlights and blue accents 
+                    <br>visually express the specialness and add sportiness to the vehicle.
+                  </div>
+                </div>
+              </div>
+            </div> 
+            <!--main 2-->
+              <div class="main_inner_important main_inner_important2">
+                <div class="content_titCon content_titCon_1">
+                    <div class="pic_title pic1_title">
+                      <h2>
+                        Embyant Light</h2>
+                    </div>
+                    <div class="pic_contents">
+                        Ambient light, including front and rear doors and
+                        <br> ambient lighting, creates a comfortable and cozy 
+                        <br>atmosphere in the interior and features six light 
+                        <br>designs: white, blue, orange, bronze, lilac and green.
+                        <br>The welcome light carpet lights up the front of the 
+                        <br>door when you get on and off.
+                    </div>
+                    <span class="readMore">
+                        <a href="#"> Read More about BMW Light</a> 
+                      </span>
+                </div>
+                  <div class="img img_2">
+                    <img src="inhandle2.jpg" width='100%'; height='100%'>
+                  </div>
+                </div>
+                <!--main3-->
+                <div class="main_inner_important main_inner_important3">
+                    <div class="img img_3">
+                        <img src="engine.jpg" width='100%'; height='100%'>
+                      </div>
+                    <div class="content_titCon content_titCon_2">
+                        <div class="pic_title pic1_title">
+                          <h2>
+                            BMW Twin Power Turbo <br>4-Cylinder Gasoline Engine</h2>
+                        </div>
+                        <div class="pic_contents">
+                            The BMW Twin Power Turbo 2.0-litre four-cylinder petrol engine 
+                            <br>guarantees
+                             dynamic driving.
+                             Achieve high efficiency and low CO2 <br>emissions while 
+                            at low engine speeds for maximum power output and fast response.
+                        </div>
+                        <span class="readMore">
+                          <a href="#"> Read More about BMW Engine</a> 
+                        </span>
+                    </div>                   
+                </div>
+                <div class="videowrap">
+                    <video id="video" preload="auto" autoplay="true" loop="loop" muted="muted" volume="0" >
+                        <source class="source" src="https://vod-progressive.akamaized.net/exp=1617091861~acl=%2Fvimeo-prod-skyfire-std-us%2F01%2F2208%2F17%2F436041499%2F1901003715.mp4~hmac=314ccf427fb95a27510073cf21d130381ae28213e7288162c27b8bdb1a15ae13/vimeo-prod-skyfire-std-us/01/2208/17/436041499/1901003715.mp4?download=1&filename=Road+-+43340.mp4">
+                </div>
+                <div class="lastmain lastmain2">
+                    <div class="lastmain_inner">
+                        <div class="lastmaintit">
+                            <h2 class="tit">VUVITI Korea</h2>                                
+                        </div>
+                        <div class="lastmaintitcon">
+                            I've just tried to follow it without a doublet 
+                        </div>
+                    </div>
+                </div>
+                <div class="lastmain lastmain3">
+                        <div class="lastmainsearch1">
+                           <div class="cartype"> Car type</div>  </div>
+                        <div class="lastmainsearch2">
+                           <div class="priceRange">Price range</div>
+                        </div>
+                        <span class="search">
+                            <div class="seeOtherVehicles">See other vehicles</div>
+                        </span>
+                        <div class="rllylast">
+                            It's my third redesign, and I'm so happy that it's so much better than ever.
+                            <br> Now I want to use JS to create more webs and apps.
+                        </div>
+                    </div>             
+        </main>
+        <footer class="footer">
+            <div class="footer_inner">
+            <div class="footer_icon">
+                <i class="fab fa-vuejs"></i>
+            
+            <div class="footer_Text">ⓒ 2021 VUVITI. All right reserved</div>
+            </div>    
+            
+            <ul class="sns_2">
+               <li class="sns_2_li"><a href="#"><i class="fab fa-twitter"></i></a></li>
+               <li class="sns_2_li"><a href="#"><i class="fab fa-instagram"></i></a></li>
+               <li class="sns_2_li"><a href="#"><i class="fab fa-facebook-square"></i></a></li>     
+            </ul>
+    
+        </div>  
+        </footer>
+    </div>
+    </div>
+    
+</body>
+</html>
